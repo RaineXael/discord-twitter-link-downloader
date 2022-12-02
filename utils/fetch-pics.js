@@ -1,4 +1,3 @@
-let a = false;
 async function fetchPics(channel, numPics) {
     const picUrls = []
     let lastReqLength = 100
@@ -26,8 +25,20 @@ function getPicUrls(message) {
         
         if(newurl!=null)
         {
-            console.log(newurl);
-            urls.push(newurl);
+            //
+            let authorName="";
+            try {
+                authorName=message.embeds[0].author.name.match(/\(([^\)]+)\)/g,"")[0];
+                authorName=authorName.substring("2",authorName.length-3)
+            } catch (error) {
+                //console.error(error);
+                authorName="";
+            }
+    
+            urls.push({
+                link:newurl,
+                author:authorName
+            });
         }
 
     

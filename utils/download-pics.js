@@ -13,8 +13,10 @@ async function downloadPics(picUrls) {
 
     let c = 0
     for (url of picUrls) {
+        let urlLink = url.link;
         try {
-            await download.image({ url, dest: `${newFolder}/pic-${c++}.jpg` })
+            console.log(typeof(urlLink));
+            await download.image({ urlLink, dest: `${newFolder}/pic-${c++} - ${url.author}.jpg` })
             signale.success(`Successfully downloaded image ${c}/${picUrls.length}!`)
             /* Sleeps every 50 downloads to prevent rate limit */
             if (c % 50 === 0) {
@@ -22,7 +24,7 @@ async function downloadPics(picUrls) {
                 await new Promise(r => { setTimeout(r , 2500) })
             }
         } catch (error) {
-            console.error("Unable to get image " + url + ", " + error);
+            console.error("Unable to get image " + urlLink + ", " + error);
         }
     }
 }
