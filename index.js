@@ -16,7 +16,7 @@ async function main() {
         name: 'numPics',
         type: 'number',
         message: 'How many pictures would you like to download?',
-        validate: v => v > 0 && v <= 1000 ? true : 'Please provide a number between 0-1000.'
+        validate: v => v > 0 && v <= 1200 ? true : 'Please provide a number between 0-1200.'
     })
 
     const channel = await client.channels.get(CHANNEL_ID)
