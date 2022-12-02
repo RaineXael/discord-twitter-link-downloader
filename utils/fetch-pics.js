@@ -19,21 +19,24 @@ function getPicUrls(message) {
     const urls = []
     let newurl=null;
     try {
-     newurl=Object.values(message.embeds[0].image.url).join("");
+        newurl=Object.values(message.embeds[0].image.url).join("");
     } catch (error) {
-        newurl=message;
+        newurl="Unable to fetch URL";
     }
         
         if(newurl!=null)
         {
             console.log(newurl);
+            urls.push(newurl);
         }
 
     
-    for (const { height, width, url } of message.attachments.array()) {
-        /* Width and height verify that the attachment is an image */
+    /*for (const { height, width, url } of message.attachments.array()) {
+        // Width and height verify that the attachment is an image 
         if (width && height) { urls.push(url) }
-    }
+    }*/
+
+    //if var notnull, return url
     return urls
 }
 

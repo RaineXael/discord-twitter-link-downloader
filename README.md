@@ -1,7 +1,7 @@
 ## Discord Downloader
 
 Download a desired number of pictures previously posted in a Discord channel.
-A very slight modification to - [tfich's](https://github.com/tfich) [Discord Downloader Node-JS project](https://github.com/tfich/discord-downloader).
+A very slight modification to - [tfich's](https://github.com/tfich) [Discord Downloader Node-JS project](https://github.com/tfich/discord-downloader) to fetch twitter images instead of discord images.
 
 ### Setup / ENV
 Before you can run you must configure your `.env` file.
